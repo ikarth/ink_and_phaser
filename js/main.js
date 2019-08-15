@@ -52,6 +52,7 @@ GameNarrative.prototype = {
         var paragraph_index = 0;
         var delay = 0.0;
         var complete_text = ""
+
         while(this.ink_story.canContinue) {
             var paragraph_text = this.ink_story.Continue();
             complete_text = complete_text + '\n' + paragraph_text;
@@ -67,6 +68,7 @@ GameNarrative.prototype = {
         this.ink_story.currentChoices.forEach((choice) => {
             this.displayChoice(choice.text, choice.index);
         });
+        this.current_paragraph = 0;
     },
     parseText: function(text, text_object) {
         text_object.clearFontValues();
